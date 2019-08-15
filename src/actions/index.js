@@ -56,4 +56,6 @@ export const deleteStream = id => async dispatch => {
   await stream.delete(`/streams/${id}`);
 
   dispatch({ type: DELETE_STREAM, payload: id });
+
+  history.push("/"); //con el push le digo que quiero navegar a esa ruta
 };

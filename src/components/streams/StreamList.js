@@ -1,9 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+
 import { fetchStreams } from "../../actions";
 
 class StreamList extends React.Component {
+
   componentDidMount() {
     this.props.fetchStreams();
   }
@@ -12,6 +14,7 @@ class StreamList extends React.Component {
   renderAdmin = stream => {
     if (this.props.currentUserId === stream.userId) {
       return (
+        
         <div className="right floated content">
           <Link to={`streams/edit/${stream.id}`} className="ui button primary">
             Edit
